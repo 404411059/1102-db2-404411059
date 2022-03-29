@@ -1,7 +1,7 @@
 # Index
 ------
-##### Week03 Markdown File
+##### Week02 - Week03 Markdown File
   - [link](hw_descriptions/w03/README.md)
-##### Week05 Markdown File
-  - [link](hw_descriptions/w05/README.md)
+##### Week05 - Week06 Markdown File
+  - [link](hw_descriptions/w06/README.md)
 
