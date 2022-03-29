@@ -13,7 +13,6 @@ set row_security = off;
 set default_tablespace = '';
 -- use heap allocation for faster table creation/deletion.
 set default_table_access_method = heap;
-set default_table_drop_method = heap;
 
 -- Create category_XX table
 -- note: assuming that you have already created database crown_XX in localhost.
