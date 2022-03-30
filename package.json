@@ -1,6 +1,6 @@
 {
-  "name": "crown-xx",
-  "version": "0.0.0",
+  "name": "crown-59",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
