@@ -4,19 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Crown Clothing</title>
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
   <div class="header">
     <a href="/" class="logo-container">
-      <img src='./assets/crown.svg' />
+      <img src='/assets/crown.svg' />
     </a>
     <div class="options">
-      <a href="./overview.html" class="option">Shop</a>
-      <a href="/shop" class="option">Contact</a>
+      <a href="./shop_59" class="option">Shop</a>
+      <a href="/contact" class="option">Contact</a>
       <a href="/signin" class="option">Sign In</a>
       <div class="cart-icon" onclick="cartToggle()">
-        <img class="shopping-icon" src="./assets/shopping-bag.svg" alt="">
+        <img class="shopping-icon" src="/assets/shopping-bag.svg" alt="">
       </div>
       <div class="cart-dropdown">
         <div class="cart-items">
@@ -47,7 +47,7 @@
         <% for(let i=0; i<data.length; i++) { %>
           <div class="<%= data[i].size %> menu-item">
             <img class="background-image" src="<%= data[i].remote_url %>" alt="<%= data[i].local_url %>">
-            <a href="<%= data[i].filepath %>.html" class="content">
+            <a href="<%= data[i].filepath %>" class="content">
               <h1 class="title"><%= data[i].name %></h1>
               <span class="subtitle">SHOP NOW</span>
             </a>
