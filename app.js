@@ -8,6 +8,12 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var crown59Router = require('./routes/crown59');
 var crown2_59Router = require('./routes/crown2_59');
+var crown2_59ShopRouter = require('./routes/shop_59');
+var Shop59WomensRouter = require('./routes/shop_59/womens');
+var Shop59MensRouter = require('./routes/shop_59/mens');
+var Shop59HatsRouter = require('./routes/shop_59/hats');
+var Shop59JacketsRouter = require('./routes/shop_59/jackets');
+var Shop59SneakersRouter = require('./routes/shop_59/sneakers');
 
 var app = express();
 
@@ -24,6 +30,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/crown_59', crown59Router);
 app.use('/crown2_59', crown2_59Router);
+app.use('/crown2_59/shop_59', crown2_59ShopRouter);
+app.use('/crown2_59/shop_59/womens', Shop59WomensRouter);
+app.use('/crown2_59/shop_59/mens', Shop59MensRouter);
+app.use('/crown2_59/shop_59/hats', Shop59HatsRouter);
+app.use('/crown2_59/shop_59/jackets', Shop59JacketsRouter);
+app.use('/crown2_59/shop_59/sneakers', Shop59SneakersRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
