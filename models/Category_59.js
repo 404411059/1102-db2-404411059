@@ -25,11 +25,5 @@ const Category_59 = class Category_59 {
         }
 }
 
-const get_all_category_query_test = async () => {
-        let results = await Category_59.fetchAll();
-        console.log('test result: ', JSON.stringify(results));
-}
-
-get_all_category_query_test();
 
 module.exports = Category_59;
