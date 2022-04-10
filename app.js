@@ -4,8 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
-const indexRouter = require('./routes/index');
-const crown2_59Router = require('./routes/crown2_59');
+const IndexRouter = require('./routes/crown2_59');
 const Shop59Router = require('./routes/shop_59');
 const Shop59WomensRouter = require('./routes/shop_59/womens');
 const Shop59MensRouter = require('./routes/shop_59/mens');
@@ -26,8 +25,8 @@ app.use(cookieParser());
 // set public dir as root dir for website
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/crown2_59', crown2_59Router);
+app.use('/', IndexRouter);
+app.use('/crown2_59', IndexRouter);
 app.use('/crown2_59/shop_59', Shop59Router);
 app.use('/crown2_59/shop_59/womens', Shop59WomensRouter);
 app.use('/crown2_59/shop_59/mens', Shop59MensRouter);

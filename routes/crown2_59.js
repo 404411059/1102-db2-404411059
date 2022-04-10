@@ -10,8 +10,9 @@ router.get('/', async (req, res, next) => {
     console.log('Routing results: \n', JSON.stringify(results));
     res.render('crown2_59/index', { 
       data: results, 
+      title: 'Crown2',
       id: '404411059', 
-      title: 'Crown2' 
+      name: '王竑迪'
     });
   } catch(err) {
     console.log('ERROR: ', err); 
