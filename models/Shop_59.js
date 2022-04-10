@@ -6,6 +6,7 @@ const Shop_59 = class Shop_59 {
     this.product_name = product_name;
     this.price = price;
     this.remote_url = remote_url;
+    this.local_url = local_url;
   }
 
   // Methods
