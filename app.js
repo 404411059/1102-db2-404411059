@@ -4,13 +4,9 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
-const IndexRouter = require('./routes/crown2_59');
+const IndexRouter = require('./routes/index');
+const Crown59Router = require('./routes/crown2_59');
 const Shop59Router = require('./routes/shop_59');
-const Shop59WomensRouter = require('./routes/shop_59/womens');
-const Shop59MensRouter = require('./routes/shop_59/mens');
-const Shop59HatsRouter = require('./routes/shop_59/hats');
-const Shop59JacketsRouter = require('./routes/shop_59/jackets');
-const Shop59SneakersRouter = require('./routes/shop_59/sneakers');
 
 const app = express();
 
@@ -26,13 +22,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', IndexRouter);
-app.use('/crown2_59', IndexRouter);
+app.use('/crown2_59', Crown59Router);
 app.use('/crown2_59/shop_59', Shop59Router);
-app.use('/crown2_59/shop_59/womens', Shop59WomensRouter);
-app.use('/crown2_59/shop_59/mens', Shop59MensRouter);
-app.use('/crown2_59/shop_59/hats', Shop59HatsRouter);
-app.use('/crown2_59/shop_59/jackets', Shop59JacketsRouter);
-app.use('/crown2_59/shop_59/sneakers', Shop59SneakersRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
