@@ -14,12 +14,12 @@ const Shop_59 = class Shop_59 {
   static async fetchAll() {
     try {
       let results = await db.query(`select * from shop_59`);
-      //console.log('Shop_59 results', JSON.stringify(results.rows));
 
       return results.rows;
 
     } catch(err) {
-      console.log('ERROR: ', err);
+
+      console.log('ERROR: ', err)
     }
   }
 
@@ -29,8 +29,10 @@ const Shop_59 = class Shop_59 {
       let results = await db.query(`select * from shop_59 where id = 1`);
 
       return results.rows;
+
     } catch(err) {
-      console.log('ERROR: ', err);
+
+      console.log('ERROR: ', err)
     }
   }
 
@@ -40,8 +42,10 @@ const Shop_59 = class Shop_59 {
       let results = await db.query(`select * from shop_59 where id = 2`);
 
       return results.rows;
+
     } catch(err) {
-      console.log('ERROR: ', err);
+
+      console.log('ERROR: ', err)
     }
   }
 
@@ -51,8 +55,10 @@ const Shop_59 = class Shop_59 {
       let results = await db.query(`select * from shop_59 where id = 3`);
 
       return results.rows;
+
     } catch(err) {
-      console.log('ERROR: ', err);
+
+      console.log('ERROR: ', err)
     }
   }
 
@@ -65,7 +71,8 @@ const Shop_59 = class Shop_59 {
       return results.rows;
 
     } catch(err) {
-      console.log('ERROR: ', err);
+
+      console.log('ERROR: ', err)
     }
   }
 
@@ -76,7 +83,8 @@ const Shop_59 = class Shop_59 {
 
       return results.rows;
     } catch(err) {
-      console.log('ERROR: ', err);
+
+      console.log('ERROR: ', err)
     }
   }
 }

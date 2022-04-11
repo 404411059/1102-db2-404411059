@@ -17,8 +17,10 @@ const Category_59 = class Category_59 {
       let results = await db.query(`select * from category_59`);
 
       return results.rows;
+
     } catch(err) {
-      console.log('ERROR: ', err);
+
+      console.log('ERROR: ', err)
     }
   }
 }

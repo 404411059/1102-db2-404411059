@@ -17,7 +17,9 @@ if (isHomework) {
     connectionString: process.env.DATABASE_URL,
     ssl: { rejectUnauthorized: false },
   });
+
 } else {
+
   pool = new Pool({
     user: 'tku_404411059',
     host: 'localhost',
