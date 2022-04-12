@@ -32,13 +32,10 @@ export default class Category_59 {
     assert.strictEqual(typeof name, 'string');
 
     try {
-      if (typeof name == 'string') {
-        let results = await db.query(`select * from category_59 where name = $1`, [name]);
 
-        return results.rows[0].id;
-      } else {
-        throw ReferenceError;
-      }
+      let results = await db.query(`select * from category_59 where name = $1`, [name]);
+
+      return results.rows[0].id;
     } catch(err) {
 
       console.log('ERROR: ', err)

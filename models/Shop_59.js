@@ -19,7 +19,6 @@ export default class Shop_59 {
       let results = await db.query(`select * from shop_59`);
 
       return results.rows;
-
     } catch(err) {
 
       console.log('ERROR: ', err)
