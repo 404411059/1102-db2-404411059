@@ -27,9 +27,9 @@ const Category_59 = class Category_59 {
   // get category ID by category.name from the table
   static async fetchByName(name) {
     try {
-      let c_id = await db.query(`select id from category where name = $1`, [name]);
+      let results = await db.query(`select * from category_59 where name = $1`, [name]);
 
-      return c_id.rows;
+      return results.rows[0].id;
 
     } catch(err) {
 

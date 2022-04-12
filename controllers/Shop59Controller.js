@@ -27,13 +27,15 @@ exports.category = async (req, res) => {
   try {
     //console.log('test: ', req.params.category)
     // match `:category` name from HTTP request.
-    let c_id = Category_59.fetchByName(req.params.category);
-    let results = Shop_59.fetchByCategory(c_id);
+    let cname = req.params.category;
+    let c_id = await Category_59.fetchByName(cname);
+    console.log('id: ', c_id);
+    let results = await Shop_59.fetchByCategory(c_id);
 
     res.render('crown2_59/products_59', {
-      title: req.params.category,
-      name: 王竑迪,
-      id: 404411059,
+      title: cname,
+      name: "王竑迪",
+      id: "404411059",
       data: results,
     })
 
