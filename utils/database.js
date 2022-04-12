@@ -1,8 +1,10 @@
-const { Pool } = require('pg');
-const { connectionString } = require('pg/lib/defaults');
+import pg from 'pg';
+import connectionString from 'pg/lib/defaults';
 
 const isHomework = process.env.NODE_ENV === 'homework';
 //const isProduction = process.env.NODE_ENV === 'production';
+
+const { Pool } = pg;
 
 let pool;
 
@@ -29,4 +31,4 @@ if (isHomework) {
   });
 }
 
-module.exports = pool;
+export default pool;
