@@ -6,3 +6,5 @@
   - [link](hw_descriptions/w06/README.md)
 ##### Week07 Markdown File
   - [link](hw_descriptions/w07/README.md)
+##### Week08 Markdown File
+  - [link](hw_descriptions/w08/README.md)
