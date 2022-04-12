@@ -6,21 +6,17 @@ const Shop_59 = require('../models/Shop_59');
 // open the home page
 exports.index = async (req, res) => {
   try {
-    let hats = await Shop_59.fetchHats();
-    let jackets = await Shop_59.fetchJackets();
-    let sneakers = await Shop_59.fetchSneakers();
-    let womens = await Shop_59.fetchWomens();
-    let mens = await Shop_59.fetchMens();
 
     res.render('crown2_59/shop_59', {
-      hats_data: hats,
-      jackets_data: jackets,
-      sneakers_data: sneakers,
-      womens_data: womens,
-      mens_data: mens
+      hats_data: await Shop_59.fetchByCategory(1),
+      jackets_data: await Shop_59.fetchByCategory(2),
+      sneakers_data: await Shop_59.fetchByCategory(3),
+      womens_data: await Shop_59.fetchByCategory(4),
+      mens_data: await Shop_59.fetchByCategory(5),
     })
 
   } catch(err) {
+    
     console.log('ERROR: ', err)
   }
 }
@@ -28,35 +24,27 @@ exports.index = async (req, res) => {
 // open product categories page.
 exports.category = async (req, res) => {
   try {
-    console.log('test: ', req.params.category)
-    let results;
+    //console.log('test: ', req.params.category)
     // match `:category` name from HTTP request.
     switch(req.params.category) {
       case 'hats':
-        results = await Shop_59.fetchHats();
-        res.render('crown2_59/shop_59/hats', { data: results })
+        res.render('crown2_59/shop_59/hats', { data: await Shop_59.fetchByCategory(1) })
         break
       case 'jackets':
-        results = await Shop_59.fetchJackets();
-        res.render('crown2_59/shop_59/jackets', { data: results })
+        res.render('crown2_59/shop_59/jackets', { data: await Shop_59.fetchByCategory(2) })
         break
       case 'sneakers':
-        results = await Shop_59.fetchSneakers();
-        res.render('crown2_59/shop_59/sneakers', { data: results })
+        res.render('crown2_59/shop_59/sneakers', { data: await Shop_59.fetchByCategory(3) })
         break
       case 'womens':
-        results = await Shop_59.fetchWomens();
-        res.render('crown2_59/shop_59/womens', { data: results })
+        res.render('crown2_59/shop_59/womens', { data: await Shop_59.fetchByCategory(4) })
         break
       case 'mens':
-        results = await Shop_59.fetchMens();
-        res.render('crown2_59/shop_59/mens', { data: results })
+        res.render('crown2_59/shop_59/mens', { data: await Shop_59.fetchByCategory(5) })
         break
       default:
         throw ReferenceError 
     }
-
-    console.log('Fetch results: \n', JSON.stringify(results))
 
   } catch(err) {
 

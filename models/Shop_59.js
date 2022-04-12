@@ -1,8 +1,9 @@
 const db = require('../utils/database');
 
 const Shop_59 = class Shop_59 {
-  constructor(id, product_name, price, remote_url) {
+  constructor(id, cat_id, product_name, price, remote_url) {
     this.id = id;
+    this.cat_id = cat_id;
     this.product_name = product_name;
     this.price = price;
     this.remote_url = remote_url;
@@ -23,65 +24,14 @@ const Shop_59 = class Shop_59 {
     }
   }
 
-  // get all Hat products data from shop_59 table
-  static async fetchHats() {
+  // get products data based on category id from shop_59 table
+  static async fetchByCategory(id) {
     try {
-      let results = await db.query(`select * from shop_59 where id = 1`);
+
+      let results = await db.query(`select * from shop_59 where cat_id = $1`, [id]);
 
       return results.rows;
 
-    } catch(err) {
-
-      console.log('ERROR: ', err)
-    }
-  }
-
-  // get all Jacket products data from shop_59 table
-  static async fetchJackets() {
-    try {
-      let results = await db.query(`select * from shop_59 where id = 2`);
-
-      return results.rows;
-
-    } catch(err) {
-
-      console.log('ERROR: ', err)
-    }
-  }
-
-  // get all Sneakers products data from shop_59 table
-  static async fetchSneakers() {
-    try {
-      let results = await db.query(`select * from shop_59 where id = 3`);
-
-      return results.rows;
-
-    } catch(err) {
-
-      console.log('ERROR: ', err)
-    }
-  }
-
-  // get all Women products data from shop_59 table
-  static async fetchWomens() {
-    try {
-      let results = await db.query(`select * from shop_59 where id = 4`);
-      //console.log('Shop_59 results', JSON.stringify(results.rows));
-
-      return results.rows;
-
-    } catch(err) {
-
-      console.log('ERROR: ', err)
-    }
-  }
-
-  // get all Men products data from shop_59 table
-  static async fetchMens() {
-    try {
-      let results = await db.query(`select * from shop_59 where id = 5`);
-
-      return results.rows;
     } catch(err) {
 
       console.log('ERROR: ', err)
