@@ -1,6 +1,7 @@
 const express = require('express');
 
 // Import Models
+const Category_59 = require('../models/Category_59');
 const Shop_59 = require('../models/Shop_59');
 
 // open the home page
@@ -26,25 +27,15 @@ exports.category = async (req, res) => {
   try {
     //console.log('test: ', req.params.category)
     // match `:category` name from HTTP request.
-    switch(req.params.category) {
-      case 'hats':
-        res.render('crown2_59/shop_59/hats', { data: await Shop_59.fetchByCategory(1) })
-        break
-      case 'jackets':
-        res.render('crown2_59/shop_59/jackets', { data: await Shop_59.fetchByCategory(2) })
-        break
-      case 'sneakers':
-        res.render('crown2_59/shop_59/sneakers', { data: await Shop_59.fetchByCategory(3) })
-        break
-      case 'womens':
-        res.render('crown2_59/shop_59/womens', { data: await Shop_59.fetchByCategory(4) })
-        break
-      case 'mens':
-        res.render('crown2_59/shop_59/mens', { data: await Shop_59.fetchByCategory(5) })
-        break
-      default:
-        throw ReferenceError 
-    }
+    let c_id = Category_59.fetchByName(req.params.category);
+    let results = Shop_59.fetchByCategory(c_id);
+
+    res.render('crown2_59/products_59', {
+      title: req.params.category,
+      name: 王竑迪,
+      id: 404411059,
+      data: results,
+    })
 
   } catch(err) {
 

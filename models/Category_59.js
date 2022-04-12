@@ -23,6 +23,19 @@ const Category_59 = class Category_59 {
       console.log('ERROR: ', err)
     }
   }
+
+  // get category ID by category.name from the table
+  static async fetchByName(name) {
+    try {
+      let c_id = await db.query(`select id from category where name = $1`, [name]);
+
+      return c_id.rows;
+
+    } catch(err) {
+
+      console.log('ERROR: ', err)
+    }
+  }
 }
 
 module.exports = Category_59;
