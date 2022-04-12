@@ -5,7 +5,7 @@
   "scripts": {
     "start": "npm run build && node dist/bin/www",
     "dev": "npm run build && nodemon dist/bin/www",
-    "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files"
+    "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./yarn.lock,./hw_descriptions,./README.md --copy-files"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
