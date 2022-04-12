@@ -1,34 +1,36 @@
-const createError = require('http-errors');
-const express = require('express');
-const path = require('path');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
+import createError from 'http-errors';
+import express from 'express';
+import path from 'path';
+import cookieParser from 'cookie-parser';
+import logger from 'morgan';
 
-const IndexRouter = require('./routes/index');
-const Crown59Router = require('./routes/crown2_59');
-const Shop59Router = require('./routes/shop_59');
+import index from './routes/index';
+import crown59 from './routes/crown2_59';
+import shop59 from './routes/shop_59';
 
 const app = express();
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+// view engine setup as '/views' directory
+app.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'ejs')
 
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-// set public dir as root dir for website
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(logger('dev'))
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
+// set cookies
+app.use(cookieParser())
+// set public directory as root of the website
+app.use(express.static(path.join(__dirname, 'public')))
 
-app.use('/', IndexRouter);
-app.use('/crown2_59', Crown59Router);
-app.use('/crown2_59/shop_59', Shop59Router);
+// user-defined routers
+app.use('/', index)
+app.use('/crown2_59', crown59)
+app.use('/crown2_59/shop_59', shop59)
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
   next(createError(404));
-});
+})
 
 // error handler
 app.use((err, req, res, next) => {
@@ -39,6 +41,6 @@ app.use((err, req, res, next) => {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
-});
+})
 
 module.exports = app;

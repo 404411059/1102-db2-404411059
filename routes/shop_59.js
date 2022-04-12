@@ -1,13 +1,14 @@
-const express = require('express');
-const router = express.Router();
+import express from 'express';
 
 // require controller modules.
-const ShopController = require('../controllers/Shop59Controller');
+import { index, category } from '../controllers/Shop59Controller';
+
+const router = express.Router();
 
 // GET request for `/shop_59` home page. (renamed from `overview.html`)
-router.get('/', ShopController.index)
+router.get('/', index)
 
 // GET request for product categories pages.
-router.get('/:category', ShopController.category)
+router.get('/:category', category)
 
-module.exports = router;
+export default router;

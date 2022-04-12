@@ -1,11 +1,11 @@
-const express = require('express');
+import express from 'express';
 
 // Import Models
-const Category_59 = require('../models/Category_59');
-const Shop_59 = require('../models/Shop_59');
+import Category_59 from '../models/Category_59';
+import Shop_59 from '../models/Shop_59';
 
 // open the home page
-exports.index = async (req, res) => {
+export const index = async (req, res) => {
   try {
 
     res.render('crown2_59/shop_59', {
@@ -15,7 +15,6 @@ exports.index = async (req, res) => {
       womens_data: await Shop_59.fetchByCategory(4),
       mens_data: await Shop_59.fetchByCategory(5),
     })
-
   } catch(err) {
     
     console.log('ERROR: ', err)
@@ -23,13 +22,12 @@ exports.index = async (req, res) => {
 }
 
 // open product categories page.
-exports.category = async (req, res) => {
+export const category = async (req, res) => {
   try {
     //console.log('test: ', req.params.category)
     // match `:category` name from HTTP request.
     let cname = req.params.category;
     let c_id = await Category_59.fetchByName(cname);
-    console.log('id: ', c_id);
     let results = await Shop_59.fetchByCategory(c_id);
 
     res.render('crown2_59/products_59', {
@@ -38,7 +36,6 @@ exports.category = async (req, res) => {
       id: "404411059",
       data: results,
     })
-
   } catch(err) {
 
     console.log('ERROR: ', err)
