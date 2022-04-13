@@ -7,6 +7,7 @@ const router = express.Router();
 // GET request for index page.
 router.get('/', async (req, res) => {
   try {
+
     let results = await Category_59.fetchAll();
 
     res.render('crown2_59/index', { 
@@ -17,7 +18,7 @@ router.get('/', async (req, res) => {
     })
   } catch(err) {
 
-    console.log('ERROR: ', err)
+    console.log('ERROR: ', err);
   }
 })
 

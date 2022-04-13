@@ -46,14 +46,14 @@
           <h2 class="title">Hats</h2>
           <div class="preview">
             <% for(let i=0; i<hats_data.length; i++) { %>
-            <div class="collection-item">
-              <img class="image" src="<%= hats_data[i].local_url %>" alt="<%= hats_data[i].remote_url %>" />
-              <div class="collection-footer">
-                <span class="name"><%= hats_data[i].product_name %></span>
-                <span class="price"><%= hats_data[i].price %></span>
+              <div class="collection-item">
+                <img class="image" src="<%= hats_data[i].local_url %>" alt="<%= hats_data[i].remote_url %>" />
+                <div class="collection-footer">
+                  <span class="name"><%= hats_data[i].product_name %></span>
+                  <span class="price"><%= hats_data[i].price %></span>
+                </div>
+                <button class="custom-button">Add to Cart</button>
               </div>
-              <button class="custom-button">Add to Cart</button>
-            </div>
             <% } %>
           </div>
         </div>
@@ -61,14 +61,14 @@
           <h1 class="title">Jackets</h1>  
           <div class="preview">
             <% for(let i=0; i<jackets_data.length; i++) { %>
-            <div class="collection-item">
-              <img class="image" src="<%= jackets_data[i].local_url %>" alt="<%= jackets_data[i].remote_url %>" />
-              <div class="collection-footer">
-                <span class="name"><%= jackets_data[i].product_name %></span>
-                <span class="price"><%= jackets_data[i].price %></span>
+              <div class="collection-item">
+                <img class="image" src="<%= jackets_data[i].local_url %>" alt="<%= jackets_data[i].remote_url %>" />
+                <div class="collection-footer">
+                  <span class="name"><%= jackets_data[i].product_name %></span>
+                  <span class="price"><%= jackets_data[i].price %></span>
+                </div>
+                <button class="custom-button">Add to Cart</button>
               </div>
-              <button class="custom-button">Add to Cart</button>
-            </div>
             <% } %>
           </div>
         </div>
@@ -76,14 +76,14 @@
           <h2 class="title">Sneakers</h2>  
           <div class="preview">
             <% for(let i=0; i<sneakers_data.length; i++) { %>
-            <div class="collection-item">
-              <img class="image" src="<%= sneakers_data[i].local_url %>" alt="<%= sneakers_data[i].remote_url %>" />
-              <div class="collection-footer">
-                <span class="name"><%= sneakers_data[i].product_name %></span>
-                <span class="price"><%= sneakers_data[i].price %></span>
+              <div class="collection-item">
+                <img class="image" src="<%= sneakers_data[i].local_url %>" alt="<%= sneakers_data[i].remote_url %>" />
+                <div class="collection-footer">
+                  <span class="name"><%= sneakers_data[i].product_name %></span>
+                  <span class="price"><%= sneakers_data[i].price %></span>
+                </div>
+                <button class="custom-button">Add to Cart</button>
               </div>
-              <button class="custom-button">Add to Cart</button>
-            </div>
             <% } %>
           </div>
         </div>
@@ -91,14 +91,14 @@
           <h2 class="title">Womens</h2>  
           <div class="preview">
             <% for(let i=0; i<womens_data.length; i++) { %>
-            <div class="collection-item">
-              <img class="image" src="<%= womens_data[i].local_url %>" alt="<%= womens_data[i].remote_url %>" />
-              <div class="collection-footer">
-                <span class="name"><%= womens_data[i].product_name %></span>
-                <span class="price"><%= womens_data[i].price %></span>
+              <div class="collection-item">
+                <img class="image" src="<%= womens_data[i].local_url %>" alt="<%= womens_data[i].remote_url %>" />
+                <div class="collection-footer">
+                  <span class="name"><%= womens_data[i].product_name %></span>
+                  <span class="price"><%= womens_data[i].price %></span>
+                </div>
+                <button class="custom-button">Add to Cart</button>
               </div>
-              <button class="custom-button">Add to Cart</button>
-            </div>
             <% } %>
           </div>
         </div>
@@ -106,14 +106,14 @@
           <h2 class="title">Mens</h2>  
           <div class="preview">
             <% for(let i=0; i<mens_data.length; i++) { %>
-            <div class="collection-item">
-              <img class="image" src="<%= mens_data[i].local_url %>" alt="<%= mens_data[i].remote_url %>" />
-              <div class="collection-footer">
-                <span class="name"><%= mens_data[i].product_name %></span>
-                <span class="price"><%= mens_data[i].price %></span>
+              <div class="collection-item">
+                <img class="image" src="<%= mens_data[i].local_url %>" alt="<%= mens_data[i].remote_url %>" />
+                <div class="collection-footer">
+                  <span class="name"><%= mens_data[i].product_name %></span>
+                  <span class="price"><%= mens_data[i].price %></span>
+                </div>
+                <button class="custom-button">Add to Cart</button>
               </div>
-              <button class="custom-button">Add to Cart</button>
-            </div>
             <% } %>
           </div>
         </div>
@@ -122,9 +122,9 @@
 
     <script>
       function cartToggle(){
-              p = document.querySelector('.cart-dropdown');
-              p.classList.toggle("show");
-            }
+        p = document.querySelector('.cart-dropdown');
+        p.classList.toggle("show");
+      }
     </script>
   </body>
 </html>

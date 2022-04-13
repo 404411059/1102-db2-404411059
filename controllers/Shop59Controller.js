@@ -17,7 +17,7 @@ export const index = async (req, res) => {
     })
   } catch(err) {
     
-    console.log('ERROR: ', err)
+    console.log('ERROR: ', err);
   }
 }
 
@@ -38,7 +38,7 @@ export const category = async (req, res) => {
     })
   } catch(err) {
 
-    console.log('ERROR: ', err)
+    console.log('ERROR: ', err);
   }
 }
 

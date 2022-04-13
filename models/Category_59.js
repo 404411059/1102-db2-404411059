@@ -17,12 +17,13 @@ export default class Category_59 {
   // get all categories from category_59 table
   static async fetchAll() {
     try {
+
       let results = await db.query(`select * from category_59`);
 
       return results.rows;
     } catch(err) {
 
-      console.log('ERROR: ', err)
+      console.log('ERROR: ', err);
     }
   }
 
@@ -38,7 +39,7 @@ export default class Category_59 {
       return results.rows[0].id;
     } catch(err) {
 
-      console.log('ERROR: ', err)
+      console.log('ERROR: ', err);
     }
   }
 }

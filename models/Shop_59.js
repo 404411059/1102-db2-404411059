@@ -3,6 +3,7 @@ import assert from 'assert';
 import db from '../utils/database';
 
 export default class Shop_59 {
+
   constructor(id, cat_id, product_name, price, remote_url) {
     this.id = id;
     this.cat_id = cat_id;
@@ -16,12 +17,13 @@ export default class Shop_59 {
   // get all datas from shop_59 table
   static async fetchAll() {
     try {
+
       let results = await db.query(`select * from shop_59`);
 
       return results.rows;
     } catch(err) {
 
-      console.log('ERROR: ', err)
+      console.log('ERROR: ', err);
     }
   }
 
@@ -36,7 +38,7 @@ export default class Shop_59 {
       return results.rows;
     } catch(err) {
 
-      console.log('ERROR: ', err)
+      console.log('ERROR: ', err);
     }
   }
 }
