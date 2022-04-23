@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
 
     res.render('crown2_59/index', { 
       data: results, 
-      title: 'Crown2',
+      title: 'Crown2_DB (EJS動態路由)',
       id: '404411059', 
       name: '王竑迪'
     })

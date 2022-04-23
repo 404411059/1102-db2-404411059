@@ -41,8 +41,10 @@
     </div>
 
     <div class="homepage">
+      <div>
+        <h1 class="title"><%= title %> <%= name %> <%= id %></h1>
+      </div>
       <div class="crown2_59">
-        <h1><%= title %> <%= id %> <%= name %></h1>
         <div class="directory-menu">
           <% for(let i=0; i<data.length; i++) { %>
             <div class="<%= data[i].size %> menu-item">

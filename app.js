@@ -5,7 +5,8 @@ import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 
 import index from './routes/index';
-import crown59 from './routes/crown2_59';
+import crown_59 from './routes/crown_59';
+import crown2_59 from './routes/crown2_59';
 import shop59 from './routes/shop_59';
 
 const app = express();
@@ -24,7 +25,8 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 // user-defined routers
 app.use('/', index)
-app.use('/crown2_59', crown59)
+app.use('/crown_59', crown_59)
+app.use('/crown2_59', crown2_59)
 app.use('/crown2_59/shop_59', shop59)
 
 // catch 404 and forward to error handler
